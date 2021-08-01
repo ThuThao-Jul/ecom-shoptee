@@ -18,8 +18,8 @@ const ProductDetailPage = () => {
 
     const dataDetail = useSelector((state) => state.productsReducer.selectedProduct);
     const loading = useSelector((state) => state.productsReducer.loading)
-    const logedIn = localStorage.getItem("login");
-    console.log("log in status", logedIn)
+    const isLoggedIn = useSelector((state) => state.userReducer.login)
+    console.log("log in status", isLoggedIn)
     
     useEffect(() => {
        dispatch(productActions.getDetailProduct(productId))
@@ -41,11 +41,11 @@ const ProductDetailPage = () => {
             setQuantity(dataDetail.stock);
         }
     }
-
     const HandleAddToCart = (e) => {
         e.preventDefault();
 
-        if (logedIn) {
+        if (isLoggedIn) {
+            
         console.log("quantity", quantity);
         dispatch(userActions.postToCart({"productId": productId, "quantity": quantity}));
         }

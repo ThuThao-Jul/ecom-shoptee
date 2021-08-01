@@ -16,13 +16,11 @@ const productsReducer = (state = initialState , action) => {
 
     switch (type) {
         case types.GET_PRODUCTS_REQUEST:
-            console.log("request")
             return {...state, loading:"true"};
         case types.GET_PRODUCTS_SUCCESS:
             console.log("products data", payload)
             return {...state, "loading": false, "data": payload.products, "totalPage": payload.totalPages};
         case types.GET_PRODUCTS_FAILURE:
-             console.log("failure")
             return {...state, "loading": false}; 
         case types.GET_DETAIL_SUCCESS:
             return {...state, "loading": false, "selectedProduct": payload};

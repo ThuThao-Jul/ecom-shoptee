@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { ClipLoader } from "react-spinners";
 
-// import { useHistory } from "react-router-dom";
 import PaginationBar from "../components/PaginationBar";
 
 import { useDispatch, useSelector } from "react-redux";

@@ -6,7 +6,7 @@ const getProducts = (page, limit, search) => async (dispatch) => {
     
     dispatch({ type: types.GET_PRODUCTS_REQUEST, payload: null});
     try {
-        let url = `http://cs-ecom-be.herokuapp.com/api/products?page=${page}&limit=${limit}`;
+        let url = `https://cs-ecom-be.herokuapp.com/api/products?page=${page}&limit=${limit}`;
         if (search) {
             url += `&search=${search}`};
         console.log(url)
@@ -23,7 +23,7 @@ const getDetailProduct = (productId) => async (dispatch) => {
 
     dispatch({ type: types.GET_PRODUCTS_REQUEST, payload: null});
     try {
-        let url = `http://cs-ecom-be.herokuapp.com/api/products/${productId}`;
+        let url = `https://cs-ecom-be.herokuapp.com/api/products/${productId}`;
         if (productId) {
         const res = await api.get(url);
 
@@ -38,7 +38,7 @@ const getCategories = () => async (dispatch) => {
 
     dispatch({ type: types.GET_PRODUCTS_REQUEST, payload: null});
     try {
-        let url = `http://cs-ecom-be.herokuapp.com/api/categories`;
+        let url = `https://cs-ecom-be.herokuapp.com/api/categories`;
         const res = await api.get(url);
 
         dispatch({ type: types.GET_CATEGORIES_SUCCESS, payload: res.data.data.categories});
@@ -52,7 +52,7 @@ const getProductsByCategory = (id) => async (dispatch) => {
 
     dispatch({ type: types.GET_PRODUCTS_REQUEST, payload: null});
     try {
-        let url = `http://cs-ecom-be.herokuapp.com/api/products/categories/${id}`;
+        let url = `https://cs-ecom-be.herokuapp.com/api/products/categories/${id}`;
         const res = await api.get(url);
 
         dispatch({ type: types.GET_PRODUCTSBYCATEGORY_SUCCESS, payload: res.data.data});

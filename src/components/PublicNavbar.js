@@ -3,8 +3,16 @@ import { Navbar, Nav } from "react-bootstrap";
 import ShopTeeLogo from "../images/ShopTeeLogo.png";
 import { NavLink } from "react-router-dom";
 import {HiOutlineShoppingCart} from "react-icons//hi"
+import { useSelector } from "react-redux";
 
 const PublicNavbar = () => {
+
+  const isLoggedIn = useSelector((state) => state.userReducer.login);
+  const handleClick =() => {
+    if (isLoggedIn === false) {
+      alert("Please log in to use this function!")
+    }
+  }
  
   return (
     <Navbar style={{backgroundColor:"#E74E35", fontSize:"large"}} expand="lg">
@@ -23,7 +31,7 @@ const PublicNavbar = () => {
       </Nav>
 
       <Nav >
-        <Nav.Link as={NavLink} to="/cart" style={{color:"white"}}>
+        <Nav.Link as={NavLink} to={isLoggedIn ? "/cart" : "/auth/login"} onClick={handleClick} style={{color:"white"}}>
           Your cart <HiOutlineShoppingCart />
         </Nav.Link>
         <Nav.Link as={NavLink} to="/auth/login" style={{color:"white"}}>
