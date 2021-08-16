@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Card, ListGroup, Nav } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { productActions } from "../redux/actions/products.actions";
 import SearchForm from "./SearchForm";
 
@@ -22,7 +23,7 @@ const Catogories = () => {
   <Card.Header>Categories</Card.Header>
   <ListGroup variant="flush">
       {categories && categories.map((c) => (
-        <Nav.Link href={`/category/${c._id}`}>{c.name}</Nav.Link>
+        <Nav.Link as={Link} to={`/category/${c._id}`} >{c.name}</Nav.Link>
       ))}
     
   </ListGroup>

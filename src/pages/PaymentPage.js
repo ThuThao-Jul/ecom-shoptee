@@ -1,13 +1,15 @@
 import React from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { userActions } from "../redux/actions/user.actions";
 
 const PaymentPage = () => {
     const params = useParams();
     const id = params.id;
+    // const userId = useSelector((state) => state.userReducer.data._id)
     const dispatch = useDispatch()
+    console.log("order id", id)
 
     const handlePayment = (e) => {
         e.preventDefault();
@@ -18,7 +20,7 @@ const PaymentPage = () => {
     return (
         <Container style={{width:"50%", borderRadius:"10px", border:"1px solid gray", padding:"3%"}}>
             <Form onSubmit={handlePayment}>
- 
+     Please check your order.
   <Form.Group className="mb-3" controlId="formGridAddress1">
     <Form.Label>Address</Form.Label>
     <Form.Control placeholder="1234 Main St" />
@@ -56,7 +58,7 @@ const PaymentPage = () => {
   </Form.Group>
 
   <Button variant="primary" type="submit">
-    Submit
+    Order now
   </Button>
 </Form>
         </Container>

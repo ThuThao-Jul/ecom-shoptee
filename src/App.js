@@ -13,8 +13,9 @@ import DetailCategoryPage from "./pages/DetailCategoryPage";
 import SignUpPage from "./pages/SignUpPage";
 import LogInPage from "./pages/LogInPage";
 import CartPage from "./pages/CartPage";
-import PaymentPage from "./pages/PaymentPage";
 import { useSelector } from "react-redux";
+import PaymentPage from "./pages/PaymentPage";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.userReducer.login)
@@ -30,7 +31,8 @@ function App() {
         <Route exact path="/auth/register" component={SignUpPage} />
         <Route exact path="/auth/login" component={LogInPage} />
         <Route exact path="/cart" component={ isLoggedIn ? CartPage : LogInPage} />
-        <Route path="/payment" component={ isLoggedIn ? PaymentPage : LogInPage} />
+        <Route exact path="/orders" component={ isLoggedIn ? OrderPage : LogInPage} />
+        <Route exact path="/payment/" component={ isLoggedIn ? PaymentPage : LogInPage} />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/search/:search" component={SearchPage} />
         <Route component={NotFoundPage} />

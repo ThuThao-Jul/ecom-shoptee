@@ -4,6 +4,7 @@ const api = axios.create({
   baseURL: "https://cs-ecom-be.herokuapp.com/api",
   headers: {
     "Content-Type": "application/json",
+    "authorization": "Bearer " + localStorage.getItem("accessToken")
   },
 });
 

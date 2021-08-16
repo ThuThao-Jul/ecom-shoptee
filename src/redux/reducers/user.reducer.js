@@ -3,7 +3,7 @@ import * as types from "../constants/user.constants"
 const initialState = {
     "login": false,
     "data": {},
-    "inCart": [],
+    "orders": [],
 }
 
 const userReducer = (state = initialState, action) => {
@@ -20,6 +20,10 @@ const userReducer = (state = initialState, action) => {
             return {...state, "data": payload};
         case types.DELETE_CARTPRODUCTS_SUCCESS:
             return {...state, "data": payload}
+        case types.POST_LOGOUT_SUCCESS:
+            return {"login": false, "data": {}};
+        case types.POST_ORDER_SUCCESS:
+            return {...state, "orders": [...state.orders, payload]};
         default:
             return state;
     }

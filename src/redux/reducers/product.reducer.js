@@ -27,7 +27,7 @@ const productsReducer = (state = initialState , action) => {
         case types.GET_CATEGORIES_SUCCESS:
             return {...state, "loading": false, "categories": payload};
         case types.GET_PRODUCTSBYCATEGORY_SUCCESS:
-            return {...state, "loading": false, "totalPage": payload.totalPages, "productsByCategory": payload.products}
+            return {...state, "loading": false, "totalPage": payload.totalPages, "productsByCategory": payload.products};
 
         // case types.GET_DETAIL_SUCCESS:
         //     // console.log("book detail", payload)

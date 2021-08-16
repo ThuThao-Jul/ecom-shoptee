@@ -88,7 +88,7 @@ const ProductDetailPage = () => {
              <Button variant="outline-info" onClick={handleAdd}>+</Button>
         </p>
         <Button variant="success" size="lg" onClick={HandleAddToCart}>Add to cart</Button>
-        <p>Only {dataDetail.stock} product(s) left</p>
+        {/* <p>Only {dataDetail.stock} product(s) left</p> */}
         <h5>Description:</h5>
         <p>{dataDetail.description}</p>
 
