@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { userActions } from "../redux/actions/user.actions";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const CartPage = () => {
     const dispatch = useDispatch();

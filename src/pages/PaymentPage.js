@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Row, Col, Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { useParams } from "react-router-dom";
 import { userActions } from "../redux/actions/user.actions";
 

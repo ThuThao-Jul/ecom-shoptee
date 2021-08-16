@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Tabs, Tab } from "react-bootstrap";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 
 const OrderPage = () => {
-    const orders = useSelector((state) => state.userReducer.orders);
+    // const orders = useSelector((state) => state.userReducer.orders);
 
     return (
         <Container style={{marginTop:"3rem"}}>

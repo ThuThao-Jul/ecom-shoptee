@@ -33,7 +33,7 @@ const LogInPage = () => {
         if (login) {
         history.push("/")
         }
-    },[dispatch, login])
+    },[dispatch, login, history])
 
     return (
     <Container style={{width:"40%", padding:"3%", marginBottom:"5%", border:"1px solid gray", borderRadius:"5px"}}>
